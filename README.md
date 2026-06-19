@@ -33,69 +33,131 @@ Fontes abertas selecionadas e adicionadas ao NotebookLM:
 
 ## Engenharia de Prompts e Cicatrizes
 
-Perguntas estrategicas elaboradas no NotebookLM:
-
-| Prompt Utilizado | Resultado Obtido | Observacao |
-|-----------------|-----------------|------------|
-| Quais sao os conceitos fundamentais de Python que um iniciante deve dominar? | Lista estruturada com variaveis, tipos de dados e funcoes | Resposta clara e bem referenciada |
-| Explique a diferenca entre listas, tuplas e dicionarios em Python | Comparacao detalhada com exemplos praticos | Funcionou muito bem |
-| Como o NumPy melhora a performance em relacao as listas nativas do Python? | Explicacao sobre arrays vetorizados | Precisei reformular para obter exemplos de codigo |
-| Crie um glossario com os 15 termos mais importantes do ecossistema Python para dados | Glossario completo gerado com base nas fontes | Excelente resultado |
-| Quais sao os prompts reutilizaveis para revisar esse tema no futuro? | Conjunto de 8 prompts organizados por tema | Requeriu um segundo prompt para detalhar mais |
+Abaixo estao os prompts reais utilizados no NotebookLM, com as respostas obtidas diretamente da ferramenta.
 
 ---
 
-## Miniguia de Estudo — Entrega Final
+### Prompt 1 — Conceitos fundamentais de Python
 
-### Resumo Estruturado
+**Pergunta:** *Quais sao os conceitos fundamentais de Python que um iniciante deve dominar?*
 
-**Python Fundamentos:**
-Python e uma linguagem de alto nivel, interpretada e de proposito geral. Seus pilares sao sintaxe legivel, tipagem dinamica, estruturas de dados nativas (listas, dicionarios, tuplas, sets) e uma vasta biblioteca padrao.
+**Resposta obtida:**
 
-**NumPy:**
-Biblioteca fundamental para computacao numerica. Introduz o ndarray, estrutura multidimensional altamente eficiente com suporte a operacoes vetorizadas.
+**1. Sintaxe e Fluxo de Controle**
+A sintaxe elegante e a tipagem dinamica facilitam o aprendizado. Estruturas essenciais: `if`, `for` e `while`. Ferramentas: `range()`, `break`, `continue` e `match` para correspondencia de padroes.
 
-**Pandas:**
-Construida sobre o NumPy, oferece as estruturas Series e DataFrame para manipulacao de dados tabulares. Permite leitura de CSV/Excel, filtragem, agrupamento e limpeza de dados.
+**2. Estruturas de Dados Embutidas**
+- Listas e Tuplas: sequencias mutaveis e imutaveis
+- Conjuntos (Sets): colecoes sem duplicatas
+- Dicionarios: mapeamentos de chave-valor
 
-**Matplotlib:**
-Biblioteca base para visualizacao de dados em Python. Permite criar graficos de linha, barra, dispersao e histograma com alto nivel de customizacao.
+**3. Funcoes e Modularizacao**
+- Funcoes com `def`, argumentos nomeados, valores padrao e `lambda`
+- Importacao de modulos da Biblioteca Padrao e de terceiros (NumPy, Pandas)
 
-**Seaborn:**
-Construida sobre o Matplotlib, facilita a criacao de visualizacoes estatisticas elegantes com menos codigo, integrando-se nativamente com DataFrames do Pandas.
+**4. Programacao Orientada a Objetos (POO)**
+- Classes, instancias, metodos e heranca
 
----
+**5. Tratamento de Erros e I/O**
+- `try` e `except` para erros graciosamente
+- Leitura e gravacao de arquivos
 
-### Glossario
-
-| Termo | Definicao |
-|-------|-----------|
-| ndarray | Array N-dimensional do NumPy, estrutura base para computacao numerica |
-| DataFrame | Estrutura tabular 2D do Pandas com linhas e colunas |
-| Series | Estrutura unidimensional do Pandas, similar a uma coluna |
-| Vetorizacao | Aplicacao de operacoes em arrays inteiros sem loops explicitos |
-| Broadcasting | Mecanismo do NumPy para operar arrays de shapes diferentes |
-| Slicing | Tecnica para selecionar subconjuntos de dados |
-| dtype | Tipo de dado de um array NumPy (int64, float32, etc.) |
-| merge/join | Operacao para combinar DataFrames com base em colunas comuns |
-| groupby | Metodo do Pandas para agrupar e agregar dados |
-| heatmap | Visualizacao matricial com gradiente de cores no Seaborn |
-| pip | Gerenciador de pacotes do Python |
-| venv | Ambiente virtual para isolar dependencias de um projeto |
-| f-string | Formatacao moderna de strings no Python |
+**6. Conceitos para Analise de Dados**
+- Arrays Multidimensionais (NumPy), Series e DataFrames (Pandas)
+- Matplotlib/Seaborn: interface Axes vs. interface pyplot
 
 ---
 
-### Prompts Reutilizaveis para Revisao
+### Prompt 2 — Glossario com os 10 termos mais importantes
 
-1. Resuma os conceitos mais importantes de Python para analise de dados em topicos
-2. Qual e a diferenca entre .loc e .iloc no Pandas? De exemplos praticos
-3. Explique como funciona o broadcasting no NumPy com exemplos
-4. Quais sao as melhores praticas para criar visualizacoes com Matplotlib e Seaborn?
-5. Crie um exercicio pratico de nivel iniciante envolvendo Pandas e Seaborn
-6. Gere um quiz de 10 perguntas sobre os fundamentos de Python abordados neste material
-7. Quais sao os erros mais comuns ao usar Pandas e como corrigi-los?
-8. Liste as funcoes mais utilizadas do NumPy e Pandas com uma frase de descricao cada
+**Pergunta:** *Crie um glossario com os 10 termos mais importantes*
+
+**Resposta obtida:**
+
+| # | Termo | Definicao |
+|---|-------|-----------|
+| 1 | **Interpretador** | Motor que processa o codigo Python, permitindo execucao em diversas plataformas |
+| 2 | **Array (NumPy)** | Objeto de matriz multidimensional; unidade fundamental para computacao cientifica |
+| 3 | **DataFrame (Pandas)** | Estrutura bidimensional rotulada para manipulacao e analise de dados estruturados |
+| 4 | **Series (Pandas)** | Estrutura unidimensional rotulada; componente basico das colunas de um DataFrame |
+| 5 | **Axes (Matplotlib)** | Interface primaria para criacao de graficos, onde elementos como linhas e etiquetas sao desenhados |
+| 6 | **Figura (Figure)** | Objeto de nivel superior que atua como container de todos os elementos do grafico |
+| 7 | **Seaborn** | Biblioteca baseada no Matplotlib com interface de alto nivel para graficos estatisticos |
+| 8 | **Indexacao** | Processo de selecionar subconjuntos de dados por rotulo ou posicao |
+| 9 | **Group by** | Logica split-apply-combine para agrupar dados, aplicar funcoes e combinar resultados |
+| 10 | **Dados Ausentes (Missing Data)** | Representacao e tratamento de valores nulos (NA); passo critico na limpeza de dados |
+
+---
+
+### Prompt 3 — Resumo estruturado do conteudo das fontes
+
+**Pergunta:** *Faca um resumo estruturado do conteudo das fontes*
+
+**Resposta obtida:**
+
+**1. Python (v3.14):** Linguagem poderosa, facil de aprender, ideal para scripts. Inclui estruturas de dados de alto nivel, controle de fluxo (`if`, `for`, `match`) e suporte a POO. Extensivel com C/C++.
+
+**2. NumPy (v2.4):** Pacote fundamental para computacao cientifica. Array multidimensional de alta performance com rotinas para matematica, logica, algebra linear, estatistica e simulacao.
+
+**3. Pandas (v3.0.3):** Biblioteca central para dados estruturados. Series e DataFrame. Funcionalidades: I/O em CSV/JSON/SQL/Excel/Parquet, indexacao, merge, group by, ausentes e series temporais.
+
+**4. Matplotlib (v3.11.0) e Seaborn (v0.13.2):**
+- Matplotlib: atalhos para API Axes, metodo `set()`, diferenca entre interface Axes e pyplot
+- Seaborn: interface de alto nivel para graficos relacionais, distribuicao, categoricos e regressao
+
+**5. Documentacao:** Tutoriais como '10 minutes to pandas' e 'Absolute Beginner's Guide to NumPy', manuais de API e glossarios oficiais.
+
+---
+
+### Prompt 4 — Aplicacoes praticas do assunto
+
+**Pergunta:** *Quais sao as aplicacoes praticas deste assunto?*
+
+**Resposta obtida:**
+
+**1. Computacao Cientifica (NumPy):** Algebra linear, transformadas de Fourier, simulacoes e processamento de grandes volumes numericos.
+
+**2. Engenharia de Dados (Pandas):** Limpeza de dados, integracao de bases (merge/join), I/O em CSV/Excel/SQL/Parquet, tabelas dinamicas e relatorios.
+
+**3. Series Temporais (Pandas):** Conversao de timestamps, geracao de intervalos de datas, fusos horarios e reamostragem (resampling).
+
+**4. Visualizacao (Matplotlib + Seaborn):** Plots estatisticos (regressao, distribuicao, categoricos), controle refinado sobre graficos e exportacao em PNG.
+
+**5. Automacao e Desenvolvimento (Python):** Scripting, prototipagem rapida, extensibilidade com C/C++ e escalabilidade via chunking.
+
+---
+
+### Prompt 5 — Prompts reutilizaveis para revisao
+
+**Pergunta:** *Crie um conjunto de prompts que eu possa reutilizar para revisar este tema*
+
+**Resposta obtida:**
+
+**Categoria 1 — Fundamentos de Python**
+- *Explique a diferenca tecnica entre listas, tuplas, sets e dicionarios em Python, abordando mutabilidade e performance.*
+- *Crie um exemplo com a instrucao match (Python 3.10+) para processar diferentes tipos de respostas de uma API.*
+- *Como funcionam as expressoes lambda e quando sao preferiveis ao def em fluxos de analise de dados?*
+
+**Categoria 2 — NumPy**
+- *O que torna o ndarray do NumPy mais eficiente que listas nativas para operacoes matematicas em larga escala?*
+- *Demonstre algebra linear (multiplicacao de matrizes e inversao) e geracao de numeros aleatorios com NumPy.*
+
+**Categoria 3 — Pandas**
+- *Diferencie Series e DataFrame, explicando como rotulos de indice facilitam o alinhamento de dados.*
+- *Como funciona a logica split-apply-combine no groupby? Calcule media e soma simultaneamente por categoria.*
+- *Quais estrategias para dados ausentes (NaN) e como decidir entre fillna ou dropna?*
+- *Quais as vantagens de usar Parquet em vez de CSV para grandes conjuntos de dados?*
+
+**Categoria 4 — Visualizacao**
+- *Explique a diferenca entre a interface pyplot e a interface Axes no Matplotlib. Quando usar o metodo set()?*
+- *Compare relplot, displot e catplot no Seaborn: quando usar cada um em analise exploratoria?*
+- *Como usar temas e paletas de cores no Seaborn para melhorar a legibilidade estatistica?*
+
+**Categoria 5 — Desafios Praticos**
+- *Descreva o fluxo completo para analisar um CSV de vendas: importacao, limpeza, agrupamento por regiao e grafico com Seaborn.*
+- *Como o Pandas facilita series temporais? Explique resampling e conversao de strings em datas.*
+
+> **Dica de Estudo:** Tente responder sem consultar a documentacao primeiro, depois valide com as fontes para checar indexacao, vetorizacao e estruturas de dados corretas.
 
 ---
 
